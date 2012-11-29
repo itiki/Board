@@ -1,0 +1,5 @@
+﻿@{
+    string urlstr = "/" + ViewContext.RouteData.Values["controller"] + "/List/";
+    string pindex = pindex = ViewContext.RouteData.Values["pageindex"].ToString();
+}
+<div class="pager" index="@pindex" count="@Model.Count" size="10" url="@urlstr"></div>

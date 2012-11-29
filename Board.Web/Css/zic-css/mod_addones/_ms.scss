@@ -1,0 +1,24 @@
+@charset "utf-8";
+@import "../zic_mixin";
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error {color: $c-error-red;}
+.field-validation-valid {display: none;}
+.input-validation-error {border: 1px solid $c-error-red-b;background-color: #ffeeee;}
+.validation-summary-valid {display: none;}
+
+/* Styles for editor and display helpers
+----------------------------------------------------------*/
+.display-label, 
+.editor-label {margin: 1em 0 0 0;}
+.display-field, 
+.editor-field {margin: 0.5em 0 0 0;}
+.text-box {width: 30em;}
+.text-box.multi-line {height: 6.5em;}
+.tri-state {width: 6em;}
+
+table.mctable td,table.mctable th{padding:8px;}
+.pager table td,.pager table th{padding:0 8px;}
+a{cursor:pointer;}
+a:hover{text-decoration:underline;}

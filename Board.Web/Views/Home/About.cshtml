@@ -1,0 +1,16 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutPub.cshtml";
+    ViewBag.Title = "关于我们";
+}
+@using System.Web.DynamicData;
+<br />
+<br />
+<h2>关于</h2>
+
+<ul>
+@foreach (MetaTable table in MetaModel.Default.Tables) { 
+    <li>
+        <a href="@table.GetActionPath("List") %>">@table.DisplayName</a>
+    </li>
+}
+</ul>

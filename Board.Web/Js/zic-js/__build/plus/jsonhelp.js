@@ -1,0 +1,1 @@
+define(function(d,c){c.JsondatestrToObj=function(c,b){var a;return"string"===typeof b&&"Date("===b.slice(0,5)&&")"===b.slice(-1)&&(a=new Date(b.slice(5,-1)))?a:b};c.TextdatestrToObj=function(c,b){var a;return"string"===typeof b&&(a=/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2}(?:\.\d*)?)Z$/.exec(b))?new Date(Date.UTC(+a[1],+a[2]-1,+a[3],+a[4],+a[5],+a[6])):b}});

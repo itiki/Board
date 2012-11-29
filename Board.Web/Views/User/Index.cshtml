@@ -1,0 +1,13 @@
+﻿@model Board.Web.ViewModels.UserModel
+@{
+    ViewBag.Title = "东方财富 - 用户：" + Model.Name;
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{}
+<h2>用户：@Model.Name</h2>
+@{Html.BeginForm("Index", "User", FormMethod.Post, new { @class = "form"});}
+	<p>
+		@Html.LabelFor(m => m.Name)
+		@Html.DisplayTextFor(m => m.Name)
+	</p>
+@{Html.EndForm();}

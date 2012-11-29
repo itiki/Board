@@ -1,0 +1,1 @@
+define(function(){return function(a){a.fn.bracket=function(d){var b=a.extend({space:"vali"},d);this.each(function(){var c=a(this);(res=eval("/"+b.space+"\\[(.*)\\]/").exec(c.attr("class")))&&c.data(b.space,res[1].split(/\[|,|\]/))})}}});

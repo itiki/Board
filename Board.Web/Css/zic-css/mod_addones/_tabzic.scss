@@ -1,0 +1,23 @@
+﻿@charset "utf-8";
+@import "../zic_mixin";
+
+/*#region tabzic */
+@mixin tabimg($index) {background-image:url(/images/tab/#{$index}.png)}
+ul.tabzic{
+	width:100%;border-bottom:2px solid #254B75;font-size:14px;
+	
+	li{margin-right:5px;float:left;background:url(/images/tab/unactl.png) no-repeat scroll left center;padding:0 0 0 3px;
+		.outer{background:url(/images/tab/unactr.png) no-repeat scroll right center;padding:0 3px 0 0;}
+		.inner{background:url(/images/tab/unact.png) repeat scroll 0 0;border-top:1px solid #C4C4C4;
+				padding:0 20px;color:#666;cursor:pointer;
+				@include onelineh(31px);@include in_bk;
+		}
+	}
+	li.act{@include tabimg(actl);font-weight:700;
+		.outer{@include tabimg(actr)}
+		.inner{@include tabimg(act);color:#fff;border-top:1px solid #254B75;}	
+	}
+}
+.tabbox{position:relative;}
+.tabtip{position:absolute;bottom:4px;right:0;}
+/*#endregion tabzic */

@@ -1,0 +1,30 @@
+p.namebox {
+  margin: 10px 0; }
+
+p.temple {
+  padding: 10px 0;
+  border-bottom: 1px dashed #ddd;
+  position: relative;
+  font-size: 14px;
+  text-align: center; }
+  p.temple span.lineidsp {
+    position: absolute;
+    top: 16px;
+    left: 8px;
+    color: #666;
+    font-size: 12px; }
+  p.temple label {
+    color: #666; }
+  p.temple a.del {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 14px;
+    right: 0;
+    display: none;
+    background: white url(/css/images/delete.png) no-repeat scroll center center;
+    cursor: pointer; }
+  p.temple input.text {
+    width: 100px; }
+  p.temple:hover a.del {
+    display: block; }

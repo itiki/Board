@@ -1,0 +1,18 @@
+﻿@model Board.Web.ViewModels.RoleModel
+@{
+    ViewBag.Title = "东方财富 - 新建角色";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{}
+<h2>新建角色</h2>
+@Html.ValidationSummary(true, "新建角色失败，请更正以下错误：", new { @class = "notifi error" })
+@{Html.BeginForm("Creat", "Role", FormMethod.Post, new { @class = "form" });}
+	<p>
+		@Html.LabelFor(m => m.Name)
+		@Html.TextBoxFor(m => m.Name, new { @class = "input submit text" })
+		@Html.ValidationMessageFor(m => m.Name)
+	</p>
+	<p class="fn-tac">
+		<a class="submit btn">提交</a>
+	</p>
+@{Html.EndForm();}

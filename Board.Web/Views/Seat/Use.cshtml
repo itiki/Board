@@ -1,0 +1,56 @@
+﻿@using CSharpcommon
+@{
+    ViewBag.Title = "东方财富 - 布告栏";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+    @Html.CssDoc("zic-css/mod_resource/zTreeStyle/zTreeStyle.css")
+    @Html.CssDoc("seat/useseat.css")
+    <script type="text/javascript" src="/js/cachedata.js"></script>
+    @Html.ScriptDoc("page/seat/use.js")
+    <script type="text/javascript">
+        var glo_userstore = '@Html.Raw(ViewBag.UserStore)'
+        var glo_nodes = '@Html.Raw(ViewBag.Nodes)'
+        var glo_cusfolder = '@Html.Raw(ViewBag.CusFolder)'
+    </script>
+}
+<div class="layout grid-s4m0">
+    <div class="col-main">
+        <div class="main-wrap main-box">
+            <a id="turnbtn" class="lk">切换编辑模式</a>
+            <div id="fluent">
+                <ul id="itemtemplist" class="clearfix">
+                    @foreach (var Item in ViewBag.Itemtemp) {
+                        <li itempid="@Item.Id" class="newitem">
+                            <img src="/css/images/@(Item.Name).png" alt="@Item.Name" />
+                        </li>
+                    }
+                </ul>
+                <div id="seatbox" class="eastmoney seatbox_sty">
+                </div>
+                <p class="mt10">
+                    <a id="exchange" class="lk">整行调换</a></p>
+                <div class="eastmoney seatbox_sty mt20" style="width: 90%; padding: 10px;">
+                    暂存区：
+                    <div id="userprivbox">
+                    </div>
+                </div>
+                <p class="mt20">
+                    <input id="submit" type="button" class="btn btn-success" value="提交更新" data-loading-text="提交进行中..." />
+                </p>
+            </div>
+            <div id="classic" class="fn-none">
+                <div id="seatbox_c">
+                </div>
+                <p class="mt20">
+                    <input id="submit_c" type="button" class="btn btn-success" value="提交更新" />
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sub">
+        <ul id="treeindex" class="ztree">
+        </ul>
+    </div>
+</div>
+@Html.Partial("_DialogPartial")

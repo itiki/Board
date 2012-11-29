@@ -1,0 +1,30 @@
+﻿@model Board.Web.ViewModels.PropModel
+@using C = Board.Web.Controllers.RoleController
+@using zic_dotnet
+@{
+    ViewBag.Title = "东方财富 - 编辑元素属性";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{}
+<h2>编辑元素 @Model.Name 的属性</h2>
+
+@Html.ValidationSummary(true, "编辑属性失败，请更正以下错误：", new { @class = "notifi error" })
+@{Html.BeginForm("Index", "Prop", FormMethod.Post, new { @class = "form"});}
+	<p>
+		@Html.LabelFor(m => m.Name)
+		@Html.TextBoxFor(m => m.Name, new { @class = "input text" })
+		@Html.ValidationMessageFor(m => m.Name)
+	</p>
+	<p>
+		@Html.LabelFor(m => m.ClassName)
+		@Html.TextBoxFor(m => m.ClassName, new { @class = "input text" })
+		@Html.ValidationMessageFor(m => m.ClassName)
+	</p>
+	<p>
+		@Html.LabelFor(m => m.Type)
+        @Html.DropDownListFor(m => m.Type, (IList<SelectListItem>)ViewBag.TypeList)
+	</p>
+	<p class="fn-tac">
+		<a class="submit btn btn-success">提交</a>
+	</p>
+@{Html.EndForm();}

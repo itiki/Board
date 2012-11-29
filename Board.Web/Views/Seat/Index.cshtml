@@ -1,0 +1,34 @@
+﻿@using CSharpcommon
+@{
+	ViewBag.Title = "东方财富 - 布告栏";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section head{
+    @Html.CssDoc("page/seat/creatseat.css")
+    <script type="text/javascript" src="/js/cachedata.js"></script>
+	<script type="text/javascript">
+        var glo_tempjson = '@Html.Raw(ViewBag.Seat.TempJson)';
+        var glo_seastid = @ViewBag.Seat.Id;
+	</script>
+    @Html.ScriptDoc("seat/index.js")
+}
+<h2>编辑模板</h2>
+<form id="vali_form" action="#" method="post" style="width:800px">
+
+<p class="f16 p10">
+    <label>名称：</label>
+    <input id="seatName" type="text" class="text boxer validate[required]" value="@ViewBag.Seat.Name" />
+    <label class="ml20">父节点：</label>
+    @Html.DropDownList("Folders", (IEnumerable<SelectListItem>)ViewBag.FoldersSel)
+</p>
+
+<div id="tempbox"></div>
+
+<p class="mt10">
+    <button id="btnAddH" class="btn">H | 添加一行标题</button>
+    <button id="btnAddT" class="btn">a | 添加一行文本</button>
+    <input title="btnSubmit" type="submit" class="btn ml20" value="提交数据" />
+</p>
+
+</form>

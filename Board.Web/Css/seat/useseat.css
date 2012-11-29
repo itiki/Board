@@ -1,0 +1,150 @@
+.ex-box {
+  padding: 10px 0;
+  position: relative; }
+  .ex-box .notifi {
+    position: absolute;
+    top: 10px;
+    left: 0; }
+
+.main-box {
+  padding: 10px 0;
+  position: relative; }
+
+.col-sub {
+  _height: 500px;
+  overflow: visible;
+  min-height: 500px; }
+
+#itemtemplist {
+  margin: 10px 55px;
+  width: 200px; }
+
+#itemtemplist li {
+  width: 33%;
+  float: left; }
+
+#treeindex button.cus_folder_ico_open, #treeindex button.cus_folder_ico_close, #treeindex button.cus_folder_ico_docu {
+  background: white url(/Css/zic-css/mod_resource/zTreeStyle/img/diy/5.png) no-repeat scroll center center; }
+#treeindex button.remove {
+  background: transparent url(/Css/images/round_delete.png) no-repeat scroll center center; }
+
+.seatbox_sty {
+  border: 1px solid #ccc;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  position: relative;
+  padding: 0 5px; }
+  .seatbox_sty ul.sortul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: none;
+    float: none;
+    width: auto;
+    height: auto;
+    position: static;
+    display: inline;
+    line-height: auto;
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+    position: relative;
+    width: 100%; }
+    .seatbox_sty ul.sortul.keeparea {
+      padding: 8px 0;
+      *padding: 4px 0; }
+    .seatbox_sty ul.sortul > li {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      background: none;
+      float: none;
+      width: auto;
+      height: auto;
+      position: static;
+      display: inline;
+      line-height: auto;
+      position: relative; }
+      .seatbox_sty ul.sortul > li span.del {
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        top: 0;
+        right: 0;
+        display: none;
+        background: white url(/css/images/delete.png) no-repeat scroll center center;
+        cursor: pointer; }
+      .seatbox_sty ul.sortul > li span.oplink {
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        top: 0;
+        right: 16px;
+        display: none;
+        background: white url(/css/images/app_window.png) no-repeat scroll center center;
+        cursor: pointer; }
+      .seatbox_sty ul.sortul > li:hover span.del {
+        display: block; }
+      .seatbox_sty ul.sortul > li:hover span.oplink {
+        display: block; }
+  .seatbox_sty li, .seatbox_sty h1, .seatbox_sty h2, .seatbox_sty h3 {
+    position: relative; }
+  .seatbox_sty span.surplus {
+    position: absolute;
+    top: 3px;
+    font-size: 14px;
+    color: #898989;
+    font-family: Arial; }
+  .seatbox_sty span.lineUp {
+    position: absolute;
+    left: -30px;
+    top: 3px;
+    width: 20px;
+    height: 20px;
+    background: url(/css/images/br_up.png) no-repeat scroll center center;
+    cursor: pointer; }
+    .seatbox_sty span.lineUp:hover {
+      background-image: url(/css/images/br_up_hov.png); }
+  .seatbox_sty span.lineDown {
+    position: absolute;
+    left: -50px;
+    top: 3px;
+    width: 20px;
+    height: 20px;
+    background: url(/css/images/br_down.png) no-repeat scroll center center;
+    cursor: pointer; }
+    .seatbox_sty span.lineDown:hover {
+      background-image: url(/css/images/br_down_hov.png); }
+  .seatbox_sty span.lid {
+    position: absolute;
+    left: -60px;
+    top: 3px;
+    font-size: 14px;
+    color: #898989;
+    font-family: Arial; }
+  .seatbox_sty .bod_b {
+    border-bottom: 1px solid #DDD; }
+
+#seatbox {
+  margin-left: 55px; }
+
+#turnbtn {
+  position: absolute;
+  right: 10px;
+  top: 0; }
+
+#seatbox_c ul {
+  border-bottom: 1px dashed #4183C4;
+  padding: 10px 0;
+  position: relative;
+  min-height: 28px; }
+  #seatbox_c ul li {
+    padding-left: 15px; }
+    #seatbox_c ul li input.text {
+      width: 100px; }
+  #seatbox_c ul span.lid {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    color: #999; }

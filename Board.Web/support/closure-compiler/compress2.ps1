@@ -1,0 +1,2 @@
+Get-ChildItem -Path ..\..\js\page -Include *.js -Recurse | % { .\compiler.exe --js $_.FullName --js_output_file ($_.FullName -replace "\\js\\page\\", "\\js\\__build\\page\\") }
+Get-ChildItem -Path .\page -Include *.js -Recurse | % { ..\support\closure-compiler\compiler.exe --js $_.FullName --js_output_file ($_.FullName -replace "\\js\\page\\", "\\js\\__build\\page\\") }

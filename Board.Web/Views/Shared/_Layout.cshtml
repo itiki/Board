@@ -1,0 +1,50 @@
+﻿@using zic_dotnet
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>@ViewBag.Title</title>
+    @Html.CssDoc("master.css")
+    <link rel="shortcut icon" href='@Html.ImgUrl("logo.ico")' type="image/x-icon" />
+    <script type="text/javascript">var glo_path = '@Html.ScriptUrl("")'</script>
+    <script type="text/javascript" src='@Html.ScriptUrl("zic-js/sea.js")' data-main='@Html.ScriptUrl("init")'></script>
+    @RenderSection("head")
+</head>
+<body>
+    @*<iframe src ="/Home/Nav" width="100px" class="FL" scrolling="no" frameborder="0"></iframe>*@
+
+    @*<div id="head">
+		<a id="logo" href="/" title="东方财富">东方财富 - 布告栏</a>
+		<span id="chief">
+		@Html.Partial("_LogOnPartial")
+		</span>
+	</div>*@
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="brand" href="#">东方财富网 - 布告栏 </a>
+                <ul class="nav">
+                    <li><a href="/Seat/Use">使用布告栏</a></li>
+                    <li><a href="/Seat/List">编辑布告栏</a></li>
+                    <li><a href="/Role/List">编辑角色</a></li>
+                    <li><a href="/Prop/List">编辑元素</a></li>
+                </ul>
+                <ul class="nav pull-right">
+                    @Html.Partial("_LogOnPartial_bt")
+                </ul>
+            </div>
+        </div>
+    </div>
+	<div id="main">
+        <p id="ajaxload_box"><img id="ajaxload" alt="loading" src="/css/images/tips/ajaxload.gif" class="fn-none" /></p>
+        <div id="notifi-box" ></div>
+		@RenderBody()
+	</div>
+	<div id="foot">
+		<div class="wapper">
+			<a id="icp" class="lk" href="http://www.eastmoney.com">© Powered by www.eastmoney.com</a>
+		</div>
+	</div>
+
+</body>
+</html>

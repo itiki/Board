@@ -1,0 +1,14 @@
+/*#region Autocolumn */
+/* HTML 
+<div class="autocol clear">
+	<a class="att" href="#"><img src="#"></a>
+	<div class="cont">....</div>
+</div>
+*/
+.autocol {
+	.att{margin:0 10px 10px 0;float: left;}
+	.att img{display: block;} /* + max-height and max-width */
+	.cont{display: table-cell;vertical-align:top;*zoom:1;}
+	.cont *{word-wrap: break-word;}
+}
+/*#endregion Autocolumn */

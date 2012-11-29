@@ -1,0 +1,15 @@
+﻿/*#region pager*/
+.Paginator {font-size:12px;line-height:22px;height:22px;margin-left:auto;margin-right:auto;text-align:center;position:relative;
+	a, .pageList .this-page {background-color:#FFFFFF;border:1px solid #ddd;padding:2px 6px;text-decoration:none;}
+	a[disabled=disabled]{background-color:#FFF;border:medium none;color:#B2B7B5;padding:2px 6px;text-decoration:none;}
+	a[disabled=disabled]:hover{background:none;color:#B2B7B5;}
+	a:visited {background-color:#FFF;border:1px solid #ddd;padding:2px 6px;text-decoration:none;}
+	.AtStartAndEnd {background-color:#FFF;border:1px solid #ddd;margin-right:20px;padding:2px 6px;}
+	.PrevAndNext {background-color:#FFF;border:1px solid #ddd;margin-right:20px;padding:2px 6px;}
+	.this-page {background-color:#FFF;border:1px solid #ddd;color:#FF8A00;font-weight:bold;padding:2px 6px;vertical-align:top;}
+	a:visited:hover, a:hover, a:active {background:none repeat scroll 0 0 #0063DC;border-color:#FFFFFF;color:#FFF;text-decoration:none;}
+	.cic{color:#B2B7B5}
+	.PagLeft{display:block;position:absolute;left:0;top:0}
+	.PagRight{display:block;position:absolute;right:0;top:0}
+}
+/*#endregion pager*/

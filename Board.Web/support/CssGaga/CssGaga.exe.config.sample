@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<configuration>
+    <appSettings>
+	<add key="pathSource" value="E:\" />
+        <add key="webSiteUrl" value="http://qzonestyle.gtimg.cn" />
+        <add key="pathReport" value="/usr/local/imgcache/htdocs" />
+        <add key="pathDest1Name" value="目标环境1" />
+        <add key="pathDest1" value="E:\output" />
+	<add key="pathReport1" value="/usr/local/imgcache/htdocs" />
+	<add key="chkTemp" value="1" />
+    </appSettings>
+</configuration>

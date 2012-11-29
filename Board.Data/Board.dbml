@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Board" Class="BoardDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.\sqlexpress;Initial Catalog=Board;Persist Security Info=True;User ID=sa;Pooling=False" SettingsObjectName="Board.Data.Properties.Settings" SettingsPropertyName="BoardConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Auth" Member="Auth">
+    <Type Name="Auth">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="act" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="key1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="key2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="key3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Auth_AuthToRole" Member="AuthToRole" ThisKey="id" OtherKey="authId" Type="AuthToRole" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserToRole" Member="UserToRole">
+    <Type Name="UserToRole">
+      <Column Name="userId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="roleId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Role_UserToRole" Member="Role" ThisKey="roleId" OtherKey="id" Type="Role" IsForeignKey="true" />
+      <Association Name="User_UserToRole" Member="User" ThisKey="userId" OtherKey="id" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AuthToRole" Member="AuthToRole">
+    <Type Name="AuthToRole">
+      <Column Name="authId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="roleId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Auth_AuthToRole" Member="Auth" ThisKey="authId" OtherKey="id" Type="Auth" IsForeignKey="true" />
+      <Association Name="Role_AuthToRole" Member="Role" ThisKey="roleId" OtherKey="id" Type="Role" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Folder" Member="Folder">
+    <Type Name="Folder">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(64)" CanBeNull="true" />
+      <Column Name="parentFolderId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Itemtemp" Member="Itemtemp">
+    <Type Name="Itemtemp">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="act" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(64)" CanBeNull="true" />
+      <Column Name="toHtml" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="props" Type="System.String" DbType="NVarChar(1024)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Role" Member="Role">
+    <Type Name="Role">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="act" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(64) NOT NULL" CanBeNull="false" />
+      <Association Name="Role_UserToRole" Member="UserToRole" ThisKey="id" OtherKey="roleId" Type="UserToRole" />
+      <Association Name="Role_AuthToRole" Member="AuthToRole" ThisKey="id" OtherKey="roleId" Type="AuthToRole" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Seat" Member="Seat">
+    <Type Name="Seat">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="act" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(64)" CanBeNull="true" />
+      <Column Name="parentFolderId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tempJson" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="tempHtml" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="defineJson" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="cache" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="editingUser" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SeatHistory" Member="SeatHistory">
+    <Type Name="SeatHistory">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="seatName" Type="System.String" DbType="NVarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="cache" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="endTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="startTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="userName" Type="System.String" DbType="NVarChar(64) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Selprop" Member="Selprop">
+    <Type Name="Selprop">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="act" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="className" Type="System.String" DbType="NVarChar(64)" CanBeNull="true" />
+      <Column Name="type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[User]" Member="User">
+    <Type Name="User">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="act" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="storedata" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="cusfolder" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="User_UserToRole" Member="UserToRole" ThisKey="id" OtherKey="userId" Type="UserToRole" />
+    </Type>
+  </Table>
+</Database>

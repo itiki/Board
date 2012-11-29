@@ -1,0 +1,30 @@
+﻿@model Pager<Board.Service.mAuth>
+@using C = Board.Web.Controllers.RoleController
+@using zic_dotnet
+@{
+    int pindex = Convert.ToInt32(ViewContext.RouteData.Values["pageindex"]);
+    int roleid = Convert.ToInt32(ViewBag.Role.Id);
+    ViewBag.Title = "东方财富 - " + ViewBag.Role.Name + "删除角色的布告栏使用权限";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{}
+<h2>删除角色 @ViewBag.Role.Name 的布告栏使用权限</h2>
+@using (Html.BeginForm()) {
+    @Html.TextBox("search", ViewBag.SearchString as string, new { @class = "text w120" })
+    <input type="submit" value="搜索" class="btn ml10" />
+}
+<table class="table">
+    <tr>
+        <th>名称</th>
+        <th>操作</th>
+    </tr>
+    @foreach (var item in Model.Result) {
+    <tr>
+        <td>@item.Name</td>
+        <td>
+            @(Html.ActionLinkWcls<C>(c => c.AuthUseRemove(roleid, pindex, item.Id), "删除"))
+        </td>
+    </tr>
+    }
+</table>
+@Html.Partial("_PagerLLPartial")

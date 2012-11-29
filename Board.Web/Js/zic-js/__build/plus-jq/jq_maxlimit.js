@@ -1,0 +1,1 @@
+define(function(){return function(b){b.fn.maxLimit=function(c){var d=b.extend({size:[160]},c);this.each(function(){var a=b(this);b(d.size).each(function(){a.hasClass("max-"+this)?a.width()>=a.height()&&a.width()>this?a.width(this):a.width()<a.height()&&a.height()>this&&a.height(this):a.hasClass("max-w"+this)&&a.width()>this&&a.width(this)})})}}});

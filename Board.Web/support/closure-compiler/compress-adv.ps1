@@ -1,0 +1,1 @@
+Get-ChildItem -Path ..\..\js\page -Include *.js -Recurse | % { .\compiler.exe --compilation_level ADVANCED_OPTIMIZATIONS --js $_.FullName --js_output_file ($_.FullName -replace "\\js\\page\\", "\\js\\__build\\page\\") }

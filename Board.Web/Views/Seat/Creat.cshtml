@@ -1,0 +1,34 @@
+﻿@using CSharpcommon
+@{
+	ViewBag.Title = "东方财富 - 布告栏";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section head{
+    @Html.CssDoc("seat/creatseat.css")
+    @Html.ScriptDoc("cachedata.js")
+    @Html.ScriptDoc("page/seat/creat.js")
+}
+<h2>新建布告栏</h2>
+<form id="vali_form" action="#" method="post" style="width:800px">
+
+<div class="f16 tal p10">
+<p>
+    <label class="in_bk w100 tar">名称：</label>
+    <input id="seatName" type="text" class="text boxer validate[required] btnSubmit" />
+</p>
+<p class="mt10">
+    <label class="in_bk w100 tar">父节点：</label>
+    @Html.DropDownList("Folders", (IList<SelectListItem>)ViewBag.FoldersSel)
+</p>
+</div>
+
+<div id="tempbox" class="f14"></div>
+
+<p class="mt20">
+    <button id="btnAddH" class="btn">H | 添加一行标题</button>
+    <button id="btnAddT" class="btn">a | 添加一行文本</button>
+    <input title="btnSubmit" type="submit" class="btn btn-success ml20" value="创建模板" />
+</p>
+
+</form>

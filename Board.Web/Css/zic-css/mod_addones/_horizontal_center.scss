@@ -1,0 +1,12 @@
+/*#region HorizontalCenter */
+/* HTML
+<div class="vm1"><div class="vm2"><div class="vm3">
+<input type="text"><a>ads</a><img src="#" />
+</div></div></div>
+vm1外部不能有line-height属性DOM
+*/
+.vm1 {display:table;*position:relative;overflow:hidden;}/* + height (if vertical center) + width */
+.vm2 {vertical-align: middle;display: table-cell;*position: absolute;*top: 50%;} 
+.vm3 {*position: relative;*top: -50%;}/* (if vertical center) + width + text-align:center; */
+.vm3 *{vertical-align:middle;}
+/*#endregion HorizontalCenter */

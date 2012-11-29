@@ -1,0 +1,1 @@
+define(function(e,c){c.PrototypeInit=function(){Array.prototype.insertAt=function(a,b){var d=this.slice(0,a),c=this.slice(a);d.push(b);return d.concat(c)};Array.prototype.removeAt=function(a){var b=this.slice(0,a+1),a=this.slice(a+1);b.pop();return b.concat(a)}}});

@@ -1,0 +1,31 @@
+﻿@model Board.Web.ViewModels.RoleModel
+@using C = Board.Web.Controllers.RoleController
+@using zic_dotnet
+@{
+    ViewBag.Title = "东方财富 - 编辑角色";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int roleid = Convert.ToInt32(ViewBag.Role.Id);
+}
+@section head{}
+<h2>编辑角色 @ViewBag.Role.Name</h2>
+<p>
+    @(Html.ActionLinkWcls<C>(c => c.Delete(roleid), "删除"))
+    @(Html.ActionLinkWcls<C>(c => c.UserList(roleid, 1), "删除用户"))
+    @(Html.ActionLinkWcls<C>(c => c.UnUserList(roleid, 1), "添加用户"))
+    @(Html.ActionLinkWcls<C>(c => c.AuthPropList(roleid, 1, null), "删除属性权限"))
+    @(Html.ActionLinkWcls<C>(c => c.UnAuthPropList(roleid, 1, null), "添加属性权限"))
+    @(Html.ActionLinkWcls<C>(c => c.AuthUseList(roleid, 1, null), "删除使用权限"))
+    @(Html.ActionLinkWcls<C>(c => c.UnAuthUseList(roleid, 1, null), "添加使用权限"))
+</p>
+
+@Html.ValidationSummary(true, "编辑角色失败，请更正以下错误：", new { @class = "notifi error" })
+@{Html.BeginForm("Index", "Role", FormMethod.Post, new { @class = "form"});}
+	<p>
+		@Html.LabelFor(m => m.Name)
+		@Html.TextBoxFor(m => m.Name, new { @class = "input submit text" })
+		@Html.ValidationMessageFor(m => m.Name)
+	</p>
+	<p class="tac">
+		<a class="submit abtn styfol">提交</a>
+	</p>
+@{Html.EndForm();}

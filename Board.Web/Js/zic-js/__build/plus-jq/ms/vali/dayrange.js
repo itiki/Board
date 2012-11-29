@@ -1,0 +1,1 @@
+define(function(){return function(a){a.validator.addMethod("dayrange",function(b,c,a){if(!/^[0-9]{4}\-[0-9]{1,2}\-[0-9]{1,2}$/.test(b))return!1;var b=new Date(b.replace(/-/gi,"/")),c=new Date,d=new Date;c.setDate(c.getDate()-parseInt(a[0])-1);d.setDate(d.getDate()+parseInt(a[1]));return b>=c&&b<=d});a.validator.unobtrusive.adapters.addMinMax("dayrange","","","dayrange")}});

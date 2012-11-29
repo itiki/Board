@@ -1,0 +1,7 @@
+﻿@charset "utf-8";
+button.ui-button-text-icon-primary{ position:relative;
+	span.ui-icon{position:absolute;top:0.6em;}
+	span.ui-button-text{padding:0 0 0 1em;}
+}
+
+/* fix in 1112 line */

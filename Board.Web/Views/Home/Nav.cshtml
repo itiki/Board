@@ -1,0 +1,36 @@
+﻿@{Layout = null;}
+@*<style type="text/css">
+    ul, ol { list-style: none; }
+    body{font-family:Arial,sans-serif;font-size:12px;color:#333;}
+    html {color: #2B2A25;background: #FFF;}
+    body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{padding: 0;margin: 0;}
+    li {list-style: none;}
+
+    ul{padding:5px;font-size:14px;list-style: none;}
+</style>
+
+<ul>
+    <li><a target="_parent" href="/Seat/Use/">使用布告栏</a></li>
+    <li><a target="_parent" href="/Seat/List/">编辑布告栏</a></li>
+    <li><a target="_parent" href="/Role/List/">编辑角色</a></li>
+    <li><a target="_parent" href="/Prop/List/">编辑元素</a></li>
+</ul>*@
+
+@using zic_dotnet
+@Html.CssDoc("master.css")
+@Html.CssDoc("zic-css/bootstrap/bootstrap.css")
+
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="brand" href="#">东方财富网 - 布告栏 </a>
+                <ul class="nav">
+                    <li class="active"><a href="/Seat/Use">使用布告栏</a> </li>
+                    <li><a href="/Seat/List">编辑布告栏</a></li>
+                    <li><a href="/Role/List">编辑角色</a></li>
+                    <li><a href="/Prop/List">编辑元素</a></li>
+                    @Html.Partial("_LogOnPartial_bt")
+                </ul>
+            </div>
+        </div>
+    </div>

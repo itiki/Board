@@ -1,0 +1,12 @@
+p.namebox{margin:10px 0;}
+p.temple{padding:10px 0;border-bottom:1px dashed #ddd;position:relative;font-size:14px;text-align:center;
+    span.lineidsp{position:absolute;top:16px;left:8px;color:#666;font-size:12px;}
+    label{color:#666;}
+    a.del{position:absolute;width:16px;height:16px;top:14px;right:0;display:none;
+        background:#fff url(/css/images/delete.png) no-repeat scroll center center;cursor:pointer;
+    }
+	input.text{width:100px;}
+    &:hover{
+        a.del{display:block;}
+    }
+}

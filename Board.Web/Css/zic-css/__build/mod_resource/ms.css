@@ -1,0 +1,14 @@
+﻿.field-validation-error{color:#f00}
+.field-validation-valid{display:none}
+.input-validation-error{border:1px solid #f00;background-color:#fee}
+.validation-summary-valid{display:none}
+.display-label,.editor-label{margin:1em 0 0 0}
+.display-field,.editor-field{margin:.5em 0 0 0}
+.text-box{width:30em}
+.text-box.multi-line{height:6.5em}
+.tri-state{width:6em}
+table.mctable td,table.mctable th{padding:8px}
+.pager table td,.pager table th{padding:0 8px}
+a{cursor:pointer}
+a:hover{text-decoration:underline}
+#GeneratedByCssGaga173{transform:rotate(20120307092945deg)}

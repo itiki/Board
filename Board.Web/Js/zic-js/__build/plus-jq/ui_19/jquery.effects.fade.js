@@ -1,0 +1,1 @@
+define(function(){return function(b){(function(c){c.effects.effect.fade=function(d,b){var a=c(this),e="hide"===c.effects.setMode(a,d.mode||"toggle");a.show();a.animate({opacity:e?0:1},{queue:!1,duration:d.duration,easing:d.easing,complete:function(){e&&a.hide();b()}})}})(b)}});

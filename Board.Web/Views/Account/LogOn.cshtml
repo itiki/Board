@@ -1,0 +1,35 @@
+﻿@model Board.Web.ViewModels.LogOnModel
+@using C = Board.Web.Controllers.AccountController;
+@using zic_dotnet;
+@{
+    Layout = "~/Views/Shared/_LayoutPub.cshtml";
+    ViewBag.Title = "东方财富 - 布告栏 - 登录";}
+
+@section head{
+    @Html.ScriptDoc("page/logon.js")
+}
+<h1><a href="/" title="东方财富">东方财富 - 布告栏</a></h1>
+<h2>登录</h2>
+@Html.ValidationSummary(true, "登录不成功，请更正以下错误：", new { @class = "notifi error" })
+
+@{Html.BeginForm("LogOn", "Account", FormMethod.Post);}
+	<p>
+		@Html.LabelFor(m => m.UserName)
+		@Html.TextBoxFor(m => m.UserName, new { @class = "input submit" })
+		@Html.ValidationMessageFor(m => m.UserName)
+	</p>
+	<p>
+		@Html.LabelFor(m => m.Password)
+		@Html.PasswordFor(m => m.Password, new { @class = "input submit" })
+		@Html.ValidationMessageFor(m => m.Password)
+	</p>
+	<p class="fn-f14va clearfix">
+		@Html.CheckBoxFor(m => m.RememberMe)
+		@Html.LabelFor(m => m.RememberMe)
+		<a class="submit btn btn-success fn-right">登录</a>
+	</p>
+@{Html.EndForm();}
+
+<p id="nav">
+@(Html.ActionLinkWcls<C>(c => c.ChangePassword(), "更改密码？"))
+</p>

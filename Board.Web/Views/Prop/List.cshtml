@@ -1,0 +1,33 @@
+﻿@model Pager<Board.Service.mSelprop>
+@using C = Board.Web.Controllers.PropController
+@using zic_dotnet
+@using Microsoft.Web.Mvc;
+@{
+    ViewBag.Title = "元素属性列表";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int pindex = Convert.ToInt32(ViewContext.RouteData.Values["id"]);
+}
+@section head{}
+<h2>元素属性列表</h2>
+<table class="table">
+    <tr>
+        <th>名称
+        @Html.DropDownList("Type", (IList<SelectListItem>)ViewBag.TypeList, "全部类别", new { @class = "change_url", url = "/Prop/List/1/" })
+        </th>
+        <th>操作</th>
+    </tr>
+    @foreach (var item in Model.Result) {
+    <tr>
+        <td>@(Html.ActionLinkWcls<C>(c => c.Index(item.Id), item.Name))</td>
+        <td>
+            @(Html.ActionLinkWcls<C>(c => c.Index(item.Id), "编辑"))
+            @(Html.ActionLinkWcls<C>(c => c.Delete(item.Id, pindex), "删除"))
+        </td>
+    </tr>
+    }
+</table>
+@Html.Partial("_PagerPartial")
+
+<p class="p10">
+    @(Html.ActionLink<C>(c => c.Creat(), "新建属性", new { @class = "btn" }))
+</p>

@@ -1,0 +1,6 @@
+﻿/*#region middle */
+div.middle{overflow: hidden;position: relative;text-align: center;}
+div.middle a{position: static;+position:absolute;top: 50%;}
+div.middle img{position: static;+position:relative;top: -50%;left: -50%;vertical-align: middle;}
+div.middle a:after{content: ".";font-size: 1px;visibility: hidden;}
+/*#endregion middle */

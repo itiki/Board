@@ -1,0 +1,2 @@
+define(function(){return function(f){(function(b){b.effects.effect.transfer=function(e,f){var g=b(this),a=b(e.to),h="fixed"===a.css("position"),c=b("body"),i=h?c.scrollTop():0,c=h?c.scrollLeft():0,d=a.offset(),a={top:d.top-i,left:d.left-c,height:a.innerHeight(),width:a.innerWidth()},d=g.offset(),j=b('<div class="ui-effects-transfer"></div>').appendTo(document.body).addClass(e.className).css({top:d.top-i,left:d.left-c,height:g.innerHeight(),width:g.innerWidth(),position:h?"fixed":"absolute"}).animate(a,
+e.duration,e.easing,function(){j.remove();f()})}})(f)}});

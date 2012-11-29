@@ -1,0 +1,9 @@
+﻿/*#region list */
+ul.zlist{
+    li{@include in_bk;width:220px;margin:0 16px 16px 0;vertical-align:top;
+		&.rowend{margin-right:0;}
+	}
+    a.tit{@include in_bk;@include ellipsis;width:220px;height:20px;line-height:20px;font-size:14px;}
+    /*div.middle{width:212px;height:212px;line-height:212px;}*/
+}
+/*#endregion list */

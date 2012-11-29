@@ -1,0 +1,24 @@
+﻿/*#region areaWData */
+.popupbox{position:absolute;z-index:9999;}
+
+a.area2Btn{cursor: pointer;height:18px;line-height:18px;padding:3px 15px 3px 5px;*padding:4px 15px 1px 5px;_padding:2px 15px 1px 5px;
+	background:url(/images/ico-text.png) 98% -116px no-repeat;*zoom:1;border: 1px solid #9C9EA4;margin-right: 15px;
+	&:hover{border-color:#ccc;text-decoration:none;
+		background:url(/images/ico-text.png) 98% -146px no-repeat;}
+}
+div.provhint{width:400px;background:#fff; border:1px solid #dedede; font-size:12px; padding:5px 23px 15px;
+	dl {line-height: 20px;}
+	dt{display: inline-block; float: left; font-weight: bold; padding-right: 10px;text-align: right;width: 40px; color:#4d4d4d;}
+	span.prov, a.city{display: inline-block;height: 22px;line-height: 22px;outline: medium none;padding: 0 6px; white-space: nowrap;cursor: pointer;}
+	span.prov:hover, a.city:hover, a.current, span.current{background:#42719f;color: #fff;text-decoration: none; line-height:22px !important;}
+	ul.cityhint{width:300px; line-height:22px; background:#f1f6fb;position:absolute;z-index:101;border:1px solid #42719f;padding:5px;
+		li{float:left;}
+	}
+}
+div.datahint{background:#fff;border:1px solid #dedede;padding:5px 23px 8px;font-size:12px; width:370px; height: auto;
+	ul{background:#fff;padding:0px 8px;font-size:12px;line-height:22px; height:150px; overflow-y:scroll;overflow-x:hidden;
+		a{padding:0 5px;cursor: pointer;display: inline-block;height: 22px;line-height: 22px;}
+		a:hover{background:#42719f;color: #fff;}
+	}
+}
+/*#endregion areaWData */

@@ -1,0 +1,66 @@
+﻿@charset "utf-8";
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+
+$zicImgPath: 'zic-css/' !default;
+
+$iconSpritePath:          $zicImgPath+"bootstrap/img/glyphicons-halflings.png";
+$iconWhiteSpritePath:     $zicImgPath+"bootstrap/img/glyphicons-halflings-white.png";
+
+$bodyBackground: #FFF !default;
+$baseFontFamily:  "Microsoft Yahei", "微软雅黑", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$baseFontSize:  12px !default;
+$baseLineHeight:  1.5 !default;
+
+// ZIC-MIXIN
+@mixin none_sty{list-style: none;padding:0;margin:0;background:none;float:none;width:auto;height:auto;position:static;display:inline;line-height:auto;}
+@mixin in_bk {display:inline-block;zoom:1;*display:inline;position:relative;}
+@mixin ellipsis{overflow: hidden; white-space: nowrap; width: 360px; text-overflow:ellipsis;}
+@mixin onelineh($size) {line-height:$size;height:$size;}
+
+// ZIC-VAR
+$c-txt: #404040;
+$c-txt-gray: #808080;
+$c-txt-unuse: #BFBFBF;
+
+$c-link:         #0069d6;
+$c-link-hover:   darken($c-link, 15);
+$c-link-active:  lighten($c-link, 15);
+$c-link-back:    lighten($c-link, 30);
+
+$c-line:#DDD;
+$c-line-light:#EEE;
+
+$c-act-blue: #0064CD;
+$c-act-blue-light: #049CDB;
+$c-act-green: #57A957;
+$c-act-green-light: #62C462;
+$c-act-red: #C43C35;
+$c-act-red-light: #EE5F5B;
+$c-act-azure: #339BB9;
+$c-act-azure-light: #5BC0DE;
+$c-act-orange: #EEDC94;
+$c-act-orange-light: #FCEEC1;
+$c-act-white: #E6E6E6;
+$c-act-white-light: #FFF;
+
+$c-box-back:#F5F5F5;
+$c-box-border:#EEE;
+$c-boxdark-back:#888;
+$c-boxdark-border:transparent;
+$c-boxblack-back:#000;
+$c-boxblack-border:transparent;
+$c-boxorange-back:#FDF5D9;
+$c-boxorange-border:#FCEEC1;
+$c-boxgreen-back:#D1EED1;
+$c-boxgreen-border:#BFE7BF;
+$c-boxblue-back:#DDF4FB;
+$c-boxblue-border:#C6EDF9;
+$c-boxpre-back:#FEFBF3;
+$c-boxpre-border:#CCC;
+
+$c-error-red:#F15C5C;
+$c-error-red-b:#C52A2A;
+$c-error-green:#4CBE14;
+$c-error-green-b:#40A60E;
+$c-error-black:#393939;

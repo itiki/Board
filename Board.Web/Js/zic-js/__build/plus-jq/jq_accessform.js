@@ -1,0 +1,2 @@
+define(function(){return function(a,e){a.fn.linksubmit=function(){this.each(function(){a(this).click(function(){a(this).closest("form").submit()})})};a.fn.accessform=function(f){var g=a.extend({assistClass:"access_"},f);this.each(function(){var d=a(this);a("input[accesskey]",d).bind("keydown",function(b){if(13==(b.keyCode?b.keyCode:b.which)){var c=a("."+g.assistClass+a(this).attr("accesskey"),d);c.click();c.is("[href^='javascript:']")&&e.delay(function(){a("body>div.formError").length||eval(c.attr("href"))},
+200);return!1}})})}}});

@@ -1,0 +1,1 @@
+define(function(){return function(a){a.fn.overlabel=function(){this.each(function(){var b=a(this),c=a("#"+b.attr("for"));c.val()||b.show();b.bind("click",function(){c.focus()});c.bind("focus blur",function(a){"blur"==a.type&&!c.val()&&!c.hasClass("using")?b.show():b.hide()})})}}});

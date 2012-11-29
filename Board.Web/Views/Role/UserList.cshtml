@@ -1,0 +1,26 @@
+﻿@model Pager<Board.Service.mUser>
+@using C = Board.Web.Controllers.RoleController
+@using zic_dotnet
+@{
+    int pindex = Convert.ToInt32(ViewContext.RouteData.Values["pageindex"]);
+    int roleid = Convert.ToInt32(ViewBag.Role.Id);
+    ViewBag.Title = "东方财富 - " + ViewBag.Role.Name + "角色的用户列表";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{}
+<h2>@ViewBag.Role.Name 给角色添加用户</h2>
+<table class="table">
+    <tr>
+        <th>名称</th>
+        <th>操作</th>
+    </tr>
+    @foreach (var item in Model.Result) {
+    <tr>
+        <td>@item.Name</td>
+        <td>
+            @(Html.ActionLinkWcls<C>(c => c.UserRemove(roleid, pindex, item.Id), "删除"))
+        </td>
+    </tr>
+    }
+</table>
+@Html.Partial("_PagerLLPartial")

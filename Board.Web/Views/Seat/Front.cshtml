@@ -1,0 +1,10 @@
+﻿@model Board.Service.mSeat
+@{
+	ViewBag.Title = "东方财富 - 布告栏";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section head{}
+<h2>布告栏：@Model.Name 的输出</h2>
+
+<p class="gray">@Model.Cache</p>

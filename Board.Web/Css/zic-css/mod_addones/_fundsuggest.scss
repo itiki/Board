@@ -1,0 +1,24 @@
+#em_fund_suggest{position:absolute; z-index:999; width:473px; padding:5px; border:1px solid #bfbfbf; background-color:#ffffff;
+	ul{height:22px; background:url('http://fund.eastmoney.com/images/bg20110411.gif') repeat-x scroll 0px -357px transparent;}
+	li{display:inline; float:left; margin-left:3px; height:20px; line-height:20px; vertical-align:middle; padding:0px 4px; border:1px solid #529dd6; background-color:#bbd6eb; cursor:pointer;}
+	li.at{background-color:#ffffff; border-bottom:1px solid #ffffff;}
+	ul label{display:inline; float:right; font-size:12px; cursor:pointer;}
+	table{width:100%;}
+	th, td{text-align:center; height:20px; line-height:20px; vertical-align:middle;}
+	th{height:25px; line-height:25px; vertical-align:middle; text-align:center; background-color:#F1F1F3;}
+	th label{ font-weight:normal;}
+	.xs{ text-align:left;}
+	.dm{ text-align:center;}
+	.dm label{margin-right:2px;}
+	.jc{text-align:left;}
+	th.jc{padding-left:20px;}
+	th.jc label{font-weight:normal; padding-left:30px;}
+	tfoot td{ text-align:right; padding-right:10px;}
+	.lists{margin:5px 0px;}
+	h4{margin:5px 0px 0px 10px; font-weight:normal; font-size:12px;}
+	dl{margin:5px 0px 0px;}
+	dt{display:block; float:left; padding:3px; color:Red;}
+	dd{margin-left:10px; overflow:hidden; zoom:1; line-height:1.0;}
+	dd span{float:left; margin-right:7px; text-indent:0px; width:85px; height:20px; line-height:20px; vertical-align:middle; overflow:hidden; cursor:pointer;}
+	dd span.hover{background-color:#bbd6eb; color:#000000;}
+}

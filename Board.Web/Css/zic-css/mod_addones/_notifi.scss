@@ -1,0 +1,14 @@
+﻿/*#region notifi */
+.notifi {border:1px solid;font-size:13px;margin:0 10px 0;position:relative;
+	color:#666452;line-height:32px;padding-left:32px;width:auto;min-height:32px;height:auto;_height:32px;
+
+	span.close {color:#990000;font-size:9px;position:absolute;right:5px;top:5px;cursor:pointer;
+	display:block;background:url(#{$zicImgPath}mod_addones/images/delete.png) no-repeat scroll 0 0;width:10px;height:10px;}
+
+	&.attention {background:#FFFBCC url(#{$zicImgPath}mod_addones/images/exclamation.png) no-repeat scroll 10px 8px;border-color:#E6DB55;}
+	&.success {background:#D5FFCE url(#{$zicImgPath}mod_addones/images/tick_circle.png) no-repeat scroll 10px 8px;border-color:#9ADF8F;}
+	&.error {background:#FFCECE url(#{$zicImgPath}mod_addones/images/cross_circle.png) no-repeat scroll 10px 8px;border-color:#DF8F8F;color:#C6040D;
+		ul{color:#000;}
+	}
+}
+/*#endregion notifi */

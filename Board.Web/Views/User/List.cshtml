@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Board.Service.mUser>
+@using C = Board.Web.Controllers.UserController
+@using zic_dotnet;
+@{
+    ViewBag.Title = "东方财富 - 用户列表";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{}
+<h2>用户列表</h2>
+<table class="table">
+    <tr>
+        <th>名称</th>
+        <th>操作</th>
+    </tr>
+    @foreach (var item in Model) {
+    <tr>
+        <td>@(Html.ActionLinkWcls<C>(c => c.Index(item.Id), item.Name))</td>
+        <td>
+            @(Html.ActionLinkWcls<C>(c => c.Delete(item.Id), "删除"))
+        </td>
+    </tr>
+    }
+</table>

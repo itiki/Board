@@ -1,0 +1,21 @@
+﻿@using zic_dotnet;
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>@ViewBag.Title</title>
+    @Html.CssDoc("master.css")
+    @Html.CssDoc("pub.css")
+    <link rel="shortcut icon" href='@Html.ImgUrl("logo.ico")' type="image/x-icon" />
+    <script type="text/javascript">var glo_path = '@Html.ScriptUrl("")'</script>
+    <script type="text/javascript" src='@Html.ScriptUrl("zic-js/modules/seajs/1.1.8/sea.js")' data-main='@Html.ScriptUrl("init")'></script>
+    @RenderSection("head")
+</head>
+<body>
+	<div id="page">
+	<div class="wapper_mm">
+	@RenderBody()
+	</div>
+	</div>
+</body>
+</html>

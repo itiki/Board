@@ -1,0 +1,26 @@
+﻿@model Pager<Board.Service.mSeatHistory>
+@using CSharpcommon
+@{
+	ViewBag.Title = "东方财富 - 布告栏历史记录";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section head{
+    @Html.ScriptDoc("page/seat/list.js")
+}
+<h2>布告栏：@ViewBag.SeatName 的输出</h2>
+<table class="table">
+    <tr>
+        <th class="w120">时间</th>
+        <th class="w100">操作人</th>
+        <th>内容</th>
+    </tr>
+    @foreach (var item in Model.Result) {
+    <tr>
+        <td>@item.StartTime</td>
+        <td>@item.UserName</td>
+        <td class='eastmoney'>@Html.Raw(item.Cache)</td>
+    </tr>
+    }
+</table>
+@Html.Partial("_PagerPartial")

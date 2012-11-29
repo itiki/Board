@@ -1,0 +1,94 @@
+﻿@charset "utf-8";
+@import "zic_mixin";
+@import "zic_rest";
+
+@import "solutions/select-mask";
+@import "solutions/remove-outline";
+@import "solutions/position-fixed";
+@import "solutions/force-wrap";
+@import "solutions/float-center";
+
+/*#region commen */
+.fn-hide{visibility:hidden;}
+.fn-hide-im{visibility:hidden!important;}
+/* 设置内联, 减少浮动带来的bug */
+.fn-left,.fn-right,.fn-left-im,.fn-right-im {display:inline;}
+.fn-left {float:left;}
+.fn-left-im{float:left!important;}
+.fn-right {float:right;}
+.fn-right-im{float:right!important;}
+.fn-none{display:none;}
+.fn-none-im{display:none!important;}
+.fn-height0{height:0!important;visibility:hidden;margin:0!important;padding:0!important;}
+.fn-nonesty{@include none_sty;}
+.fn-show{display:block;}
+.fn-show-im{display:block!important;}
+.fn-rel{position:relative;}
+.fn-fw{font-weight:700!important;}
+.fn-tal{text-align:left!important;}
+.fn-tar{text-align:right!important;}
+.fn-tac{text-align:center!important;}
+.fn-inbk{@include in_bk;}
+.fn-nowrap{white-space:nowrap;}
+.fn-vam{vertical-align:middle;}
+/*f14时，单复选框对齐良好，可选使用vaip14；f12时，使用.vaip*/
+.fn-f14va input[type='radio'], .fn-f14va input[type='checkbox']{vertical-align:-1px\9;}
+.fn-f12va input[type='radio'], .fn-f12va input[type='checkbox']{vertical-align:-3px;}
+.fn-zmax{z-index:999;}
+.fn-clear { @include clearfix; }
+.fn-ellipsis {@include ellipsis;}
+a.fn-ellipsis, span.fn-ellipsis {@include in_bk;}
+/*#endregion commen */
+
+/*#region Vector */
+.w100{width:100px;}
+.w120{width:120px;}
+.w250{width:250px;}
+.wh24{width:24px;height:24px;}
+.wh48{width:48px;height:48px;}
+.wh64{width:64px;height:64px;}
+.wh128{width:128px;height:128px;}
+
+.min_h100{min-height:100px; _height:100px; overflow:visible;}
+.min_w100{min-width:100px; _width:100px; overflow:visible;}
+.max_w120{max-width:120px;}
+.max_w160{max-width:160px;}
+.max_w320{max-width:320px;}
+.max_320{max-width:320px;max-height:320px;}
+.max_600{max-width:600px;max-height:600px;}
+
+.m20{margin:20px;}
+.ml10{margin-left:10px;}
+.ml40{margin-left:40px;}
+.mr10{margin-right:10px;}
+.mr15{margin-right:15px;}
+.mr20{margin-right:20px;}
+.mt5{margin-top:5px;}
+.mt10{margin-top:10px;}
+.mt15{margin-top:15px;}
+.mt20{margin-top:20px;}
+.mt40{margin-top:40px;}
+.mb5{margin-bottom:5px;}
+.mb10{margin-bottom:10px;}
+.mb15{margin-bottom:15px;}
+.mb20{margin-bottom:20px;}
+.mr5{margin-right:5px;}
+.ml5{margin-left:5px;}
+.ml20{margin-left:20px;}
+.p10{padding:10px;}
+.p20{padding:20px;}
+.pl10{padding-left:10px;}
+.pl20{padding-left:20px;}
+.pl40{padding-left:40px;}
+.pr100{padding-right:100px;}
+.pr10{padding-right:10px;}
+.pr20{padding-right:20px;}
+.pr20{padding-right:20px;}
+.pb10{padding-bottom:10px;}
+.pb20{padding-bottom:20px;}
+.pb5{padding-bottom:5px;}
+.pt5{padding-top:5px;}
+.pt10{padding-top:10px;}
+.pt20{padding-top:20px;}
+.pt30{padding-top:30px;}
+/*#endregion Vector */

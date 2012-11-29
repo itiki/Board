@@ -1,0 +1,55 @@
+﻿@charset "utf-8";
+@import "../zic_mixin";
+
+/*#region psszic */
+@mixin stepimg($index) {background-image:url(mod/img/step/#{$index}.png);}
+@mixin bdFF4900($side) {border-#{$side}: 1px solid #FF4900;}
+@mixin bdCB($side) {border-#{$side}: 1px solid #CBCBCB;}
+@mixin bdFFF($side) {border-#{$side}: 1px solid #fff;}
+ul.psszic{
+	font-size:16px;font-weight:700;
+	
+	li{padding:0 19px 0 0;background-position:right center;float:left;background-repeat:no-repeat;}
+	li.top{@include bdFF4900(left);}
+	.outer{@include bdFF4900(top);@include bdFF4900(bottom);}
+	.inner{@include bdFFF(top);@include bdFFF(bottom);@include stepimg(fh);@include in_bk;@include onelineh(27px);
+			padding:0 15px 0 38px;color:#FF4900;
+			span{height:22px;width:16px;position:absolute;top:2px;left:15px;}
+	}
+
+	span.i1{@include stepimg(1);}
+	span.i2{@include stepimg(2);}
+	span.i3{@include stepimg(3);}
+	span.i4{@include stepimg(4);}
+	
+	li.wait{
+		@include stepimg(stepdd);
+		.outer{@include bdCB(top);@include bdCB(bottom);}
+		.inner{@include stepimg(fd);color:#CBCBCB;}
+		span.i2{@include stepimg(2d);}
+		span.i3{@include stepimg(3d);}
+		span.i4{@include stepimg(4d);}	
+	}
+	li.done{@include stepimg(stephh);}
+	li.now{@include stepimg(stephd);}
+	li.waitend{@include stepimg(stepd);}
+	li.nowend{@include stepimg(steph);}
+}
+ul.psszic2{
+	font-size:14px;font-weight:700;
+	li{padding:0 13px 0 0;background-position:right center;float:left;background-repeat:no-repeat;
+		&.done{@include stepimg(p2h);
+			.inner span{@include stepimg(p2fh);}
+		}
+		&.wait{@include stepimg(p2d);
+			.outer{border-color:#DBDBDB;}
+			.inner{background-image:none;color:#B5B5B5}
+		}
+	}
+	.outer{border:1px solid #FFA700;border-right:none 0;}
+	.inner{@include stepimg(p2fd);@include in_bk;
+		border:1px solid #fff;border-right:none 0;padding:0 5px 0 55px;height:47px;line-height:47px;color:#666;
+		span{height:47px;line-height:47px;width:47px;position:absolute;top:0;left:0;background-color:#E8E8E8;font-size:24px;color:#fff;text-align:center;font-family:Arial;}
+	}
+}
+/*#endregion psszic */

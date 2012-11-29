@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Board.Service.mRole>
+@using C = Board.Web.Controllers.RoleController
+@using zic_dotnet
+@using Microsoft.Web.Mvc;
+@{
+    ViewBag.Title = "东方财富 - 角色列表";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{}
+<h2>编辑角色权限</h2>
+<table class="table">
+    <tr>
+        <th>名称</th>
+        <th>操作</th>
+        <th>用户</th>
+        <th>使用权限</th>
+        <th>属性权限</th>
+    </tr>
+    @foreach (var item in Model) {
+    <tr>
+        <td>@(Html.ActionLinkWcls<C>(c => c.Index(item.Id), item.Name))</td>
+        <td>
+            @(Html.ActionLinkWcls<C>(c => c.Index(item.Id), "编辑"))
+            @(Html.ActionLinkWcls<C>(c => c.Delete(item.Id), "删除"))
+        </td>
+        <td>
+            @(Html.ActionLinkWcls<C>(c => c.UnUserList(item.Id, 1), "添加用户"))
+            @(Html.ActionLinkWcls<C>(c => c.UserList(item.Id, 1), "删除用户"))
+        </td>
+        <td>
+            @(Html.ActionLinkWcls<C>(c => c.UnAuthUseList(item.Id, 1, null), "添加使用权限"))
+            @(Html.ActionLinkWcls<C>(c => c.AuthUseList(item.Id, 1, null), "删除使用权限"))
+        </td>
+        <td>
+            @(Html.ActionLinkWcls<C>(c => c.UnAuthPropList(item.Id, 1, null), "添加属性权限"))
+            @(Html.ActionLinkWcls<C>(c => c.AuthPropList(item.Id, 1, null), "删除属性权限"))
+        </td>
+    </tr>
+    }
+</table>
+<p class="p10">
+    @(Html.ActionLink<C>(c => c.Creat(), "新建角色", new { @class = "btn" }))
+</p>

@@ -1,0 +1,2 @@
+define(function(){return function(d){d.fn.flashClass=function(e){var b=d.extend({autorun:!1,newClass:"",maxCache:100,animSpeed:1E3},e);this.each(function(){var a=d(this);a.data("fc_run",b.autorun);var e=0,c=function(){e++>b.maxCache||!a.data("fc_run")&&!a.hasClass(b.newClass)||(""==b.newClass?a.fadeToggle(b.animSpeed,c):a.toggleClass(b.newClass,b.animSpeed,c))};c();a.on("flashclass",function(){if(!a.data("fc_run")||!a.is(":animated"))a.data("fc_run",!0),c()});a.on("stopflashclass",function(){a.data("fc_run",
+!1)})})}}});

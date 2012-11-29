@@ -1,0 +1,1 @@
+define(function(){return function(b){b.fn.fixposition=function(e){var d=b.extend({fixtop:5,fixleft:5},e);this.each(function(){var a=b(this).offset(),c=a.top,a=a.left,c=c-d.fixtop,a=a-d.fixleft;b("html:not(:animated),body:not(:animated)").animate({scrollTop:c,scrollLeft:a},1100)})}}});

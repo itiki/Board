@@ -1,0 +1,11 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+@{
+    Layout = "~/Views/Shared/_LayoutPub.cshtml";
+    ViewBag.Title = "出错了";
+}
+
+<h1><a href="/" title="东方财富">出错了！</a></h1>
+@if (Model != null) { 
+    <h2>@Model.Exception.Message</h2>
+    <p class="gray mt10">thrown in @Model.ControllerName.@Model.ActionName</p>
+}
